@@ -53,7 +53,20 @@ Array.prototype.mySome =  function(callbackfn) {
     return false;
 }
 
-
+/*
+every()
+Without using the native “Array.prototype.every” method of JavaScript, 
+compose a function titled “myEvery” that will take in an array of elements 
+and execute a callback function on each of those elements.
+*/
+Array.prototype.myEvery =  function(callbackfn) {
+    for (let i = 0; i < this.length; i++) {
+        if (!callbackfn(this[i], i, this)) {
+            return false;
+        }
+    }
+    return true;
+}
 
 /**
  * Main function to run tests in
@@ -77,7 +90,9 @@ function main() {
     console.log(arr.some(x => x % 2 == 0))
     console.log(arr.mySome(x => x % 2 == 0))
 
-
+    // test for myEvery()
+    console.log(arr.some(x => x % 2 == 0))
+    console.log(arr.mySome(x => x % 2 == 0))
 
 };
 
