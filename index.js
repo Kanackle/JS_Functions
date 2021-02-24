@@ -68,6 +68,20 @@ Array.prototype.myEvery =  function(callbackfn) {
     return true;
 }
 
+/*
+reduce()
+Without using the native “Array.prototype.reduce” method of JavaScript, 
+compose a function titled “myReduce” that will take in an array of elements 
+and execute a callback function on each of those elements.
+*/
+Array.prototype.myReduce =  function(callbackfn) {
+    let retVal = callbackfn(this[0], this[1]);
+    for (let i = 2; i < this.length; i++) {
+        retVal = callbackfn(retVal, this[i])
+    }
+    return retVal;
+}
+
 /**
  * Main function to run tests in
  */
@@ -93,6 +107,11 @@ function main() {
     // test for myEvery()
     console.log(arr.some(x => x % 2 == 0))
     console.log(arr.mySome(x => x % 2 == 0))
+
+    // test for myReduce()
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    console.log(arr.reduce(reducer))
+    console.log(arr.myReduce(reducer))
 
 };
 
