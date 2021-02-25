@@ -89,9 +89,9 @@ compose a function titled “myLastIndexOf” that will take in an array of elem
 and returns the index of the last encounter of a target element (if it is found) 
 or -1 if that element does not exist within the input array.
 */
-const myLastIndexOf = function(_arr, _element){
-    for(let i = _arr.length()-1 ; i >= 0; i--){
-        if(_arr[i] === _element){
+Array.prototype.myLastIndexOf = function(_element, index = 1){
+    for(let i = this.length - index; i >= 0; i--){
+        if(this[i] === _element){
             return i;
         }
     }
@@ -103,7 +103,12 @@ Without using the native “Object.keys()” method of JavaScript,
 compose a function titled “grabKeys” that will take in an object 
 and return all of the keys of the key:value pairs of that object.
 */
-
+const grabKeys = function(key, user){
+    const array = [];
+    for(const key in user){
+        array.push(${key});
+    }
+}
 /*
 f12
 Without using the native “Object.values()” method of JavaScript, 
