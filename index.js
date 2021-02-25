@@ -115,8 +115,13 @@ Without using the native “Object.values()” method of JavaScript,
 compose a function titled “grabValues” that will take in an object 
 and return all of the values of the key:value pairs of that object.
 */
-const grabValues = 
-
+const grabValues = function(_key, user){
+    const array = [];
+    for(const key in user){
+        array.push('${key}');
+   }
+}
+   
 
 /**
  * Main function to run tests in
@@ -149,6 +154,12 @@ function main() {
     console.log(arr.reduce(reducer))
     console.log(arr.myReduce(reducer))
 
+
+    let arr = [1, 2, 4, 4];
+
+    //test for lastIndexOf()
+    console.log(arr.lastIndexOf(4));
+    console.log(arr.myLastIndexOf(4));
 };
 
 main();
