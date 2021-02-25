@@ -103,11 +103,13 @@ Without using the native “Object.keys()” method of JavaScript,
 compose a function titled “grabKeys” that will take in an object 
 and return all of the keys of the key:value pairs of that object.
 */
-const grabKeys = function(_key, user){
+const grabKeys = function(_obj){
     const array = [];
-    for(const key in user){
-        array.push('${_key}');
+      for(const _key in _obj){
+        array.push(`${_key}`);
     }
+  return array;
+  //console.log(array);
 }
 /*
 f12
@@ -115,11 +117,12 @@ Without using the native “Object.values()” method of JavaScript,
 compose a function titled “grabValues” that will take in an object 
 and return all of the values of the key:value pairs of that object.
 */
-const grabValues = function(_key, user){
+const grabValues = function(_obj){
     const array = [];
-    for(const key in user){
-        array.push('${key}');
+    for(const _key in _obj){
+        array.push('${_obj[_key]}');
    }
+   return array;
 }
    
 
@@ -160,6 +163,22 @@ function main() {
     //test for lastIndexOf()
     console.log(arr.lastIndexOf(4));
     console.log(arr.myLastIndexOf(4));
+
+    const details = {
+        name: 'John Doe',
+        email: 'john.doe@example.com',
+        age: 25,
+        dob: '08/02/1989',
+        active: true
+    };
+
+    //test for Object.keys()
+    console.log(Object.keys(details));
+    console.log(grabKeys(details));
+
+    //test for Object.values()
+    console.log(Object.values(details));
+    console.log(grabValues(details));
 };
 
 main();
