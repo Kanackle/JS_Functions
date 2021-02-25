@@ -1,3 +1,5 @@
+// Group members: Aamer Shikari, Kanak Somani, Talha Rahman, Xing Tao Shi
+
 /**
  * Performs the specified action for each element in an array.
  * @param callbackfn  A function that calls the callbackfn function one time for each element in the array.
@@ -119,17 +121,6 @@ elementToAdd and append that element to the end of the array.
 */
 Array.prototype.myPush = function(element) {
     this[this.length] = element;
-    /*
-    newLength = this.length + 1; 
-    let newArr = Array.apply(null, Array(newLength)).map(function () {}); 
-    for (let i = 0; i < this.length; i++){
-        if (i = newArr.length - 1){
-            newArr[i] = element;
-        } else { 
-            newArr[i] = this[i];
-        }
-    }
-    */
 }
 /*
 f10
@@ -158,7 +149,6 @@ const grabKeys = function(_obj){
         array.push(`${_key}`);
     }
   return array;
-  //console.log(array);
 }
 /*
 f12
@@ -170,7 +160,7 @@ const grabValues = function(_obj){
     const array = [];
     for(const _key in _obj){
         array.push('${_obj[_key]}');
-   }
+    }
    return array;
 }
    
@@ -280,7 +270,6 @@ function main() {
     console.log(Object.values(details));
     console.log(grabValues(details));
     console.log();
-    
 };
 
 main();
