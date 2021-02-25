@@ -82,6 +82,50 @@ Array.prototype.myReduce =  function(callbackfn) {
     return retVal;
 }
 
+/*
+f10
+Without using the native “Array.prototype.lastIndexOf” method of JavaScript, 
+compose a function titled “myLastIndexOf” that will take in an array of elements 
+and returns the index of the last encounter of a target element (if it is found) 
+or -1 if that element does not exist within the input array.
+*/
+Array.prototype.myLastIndexOf = function(_element, index = 1){
+    for(let i = this.length - index; i >= 0; i--){
+        if(this[i] === _element){
+            return i;
+        }
+    }
+    return -1;
+}
+/*
+f11
+Without using the native “Object.keys()” method of JavaScript, 
+compose a function titled “grabKeys” that will take in an object 
+and return all of the keys of the key:value pairs of that object.
+*/
+const grabKeys = function(_obj){
+    const array = [];
+      for(const _key in _obj){
+        array.push(`${_key}`);
+    }
+  return array;
+  //console.log(array);
+}
+/*
+f12
+Without using the native “Object.values()” method of JavaScript, 
+compose a function titled “grabValues” that will take in an object 
+and return all of the values of the key:value pairs of that object.
+*/
+const grabValues = function(_obj){
+    const array = [];
+    for(const _key in _obj){
+        array.push('${_obj[_key]}');
+   }
+   return array;
+}
+   
+
 /**
  * Main function to run tests in
  */
@@ -113,6 +157,28 @@ function main() {
     console.log(arr.reduce(reducer))
     console.log(arr.myReduce(reducer))
 
+
+    let arr = [1, 2, 4, 4];
+
+    //test for lastIndexOf()
+    console.log(arr.lastIndexOf(4));
+    console.log(arr.myLastIndexOf(4));
+
+    const details = {
+        name: 'John Doe',
+        email: 'john.doe@example.com',
+        age: 25,
+        dob: '08/02/1989',
+        active: true
+    };
+
+    //test for Object.keys()
+    console.log(Object.keys(details));
+    console.log(grabKeys(details));
+
+    //test for Object.values()
+    console.log(Object.values(details));
+    console.log(grabValues(details));
 };
 
 main();
